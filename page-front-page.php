@@ -15,9 +15,8 @@
 			<?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
 			<h1><?php the_title(); ?></h1>
 			<p><?php the_field('content'); ?></p>
-			<a href="<?php get_page_link(); ?>" class="link-button">More About Me</a>
-			<?php wp_reset_postdata(); ?>
-			<?php endwhile; endif; ?>
+			<a href="<?php echo get_page_uri(343); ?>" class="link-button">More About Me</a>
+			<?php wp_reset_postdata(); endwhile; endif; ?>
 			<div class="dec-imgs-div group flex">
 				<?php the_field('decoration_image_1'); ?>
 				<?php the_field('decoration_image_2'); ?>
@@ -45,7 +44,7 @@
 				</div>
 				<?php wp_reset_postdata(); endwhile; endif; ?>
 			</div>
-			<a href="works.html" class="link-button">All Projects</a>
+			<a href="<?php echo get_page_uri(340)?>" class="link-button">All Projects</a>
 		</div>
 	</div>	
 </main>

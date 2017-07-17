@@ -4,7 +4,7 @@ add_theme_support( 'menus' );
 add_theme_support( 'post-thumbnails' );
 
 function bwb_excerpt_length( $length ){
-	return 16;
+	return 30;
 }
 
 remove_filter ('acf_the_content', 'wpautop');

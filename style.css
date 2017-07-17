@@ -2,11 +2,11 @@
 Theme Name: B&W&B Portfolio Theme
 Author: Johnson Tai
 Author URI: http://johnsontai.me/
-Description: A post modern, simple, responsive portfolio theme designed in WordPress Theme Development course at Treehouse.
+Description: A post modern, simple, responsive portfolio theme designed.
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, white, light, one-column, two-columns, left-sidebar, fluid-layout, responsive-layout, custom-menu, featured-images
+Tags: black, white, light, one-column, two-columns, fluid-layout, responsive-layout, custom-menu, featured-images
 */ 
 
 
@@ -60,7 +60,12 @@ a {
 	text-decoration: none;
 }
 
-/*  clearfix  */
+/*
+
+clearfix
+
+*/
+
 .group:before,
 .group:after {
   content:"";
@@ -70,7 +75,12 @@ a {
   clear:both;
 }
 
-/*  Global  */
+/*
+
+Global
+
+*/
+
 body {
 	font-family: 'Spectral', serif;
 	color: rgb(73, 76, 78);
@@ -97,7 +107,11 @@ img {
 	padding-bottom: 30px;
 }
 
-/*  logo svg */
+/*
+
+logo svg
+
+*/
 
 text {
 	text-anchor: middle;
@@ -114,10 +128,31 @@ circle {
 	fill: rgb(0, 152, 212);
 }
 
-/*  header  */
+/*
+
+header
+
+*/
 
 header {
 	height: 100%;
+}
+header h1 {
+	font-weight: bold;
+	font-size: 2.2em;
+	margin: 60px 10% 50px 10%;
+}
+.header-img-div {
+	width: 100%;
+	height: 400px;
+	overflow: hidden;
+}
+header img {
+	width: 100%;
+	height: auto;
+	position: relative;
+	top: -70px;
+	animation: fadeIn 4s;
 }
 nav {
 	padding: 30px 0;
@@ -130,6 +165,8 @@ nav ul {
 	float: right;
 	list-style: none;
 	text-align: right;
+	position: absolute;
+	right: -105px;
 	transition: right 0.7s ease-in;
 }
 nav li {
@@ -146,17 +183,18 @@ nav li:hover {
 .show {
 	right: 0;
 }
-.social-links a {
+#menu-item-359 a, #menu-item-360 a, #menu-item-361 a{
 	transition: all 0.3s;
 }
-.social-links a:hover, .hidden-menu a:hover {
+#menu-item-359 a:hover, #menu-item-360 a:hover, #menu-item-361 a:hover {
 	color: rgb(0, 152, 212);
 	transform: scale(1.3);
 }
-.social-links:hover {
+#menu-item-359:hover, #menu-item-360:hover, #menu-item-361:hover {
 	border-bottom: 0;
 }
 .logo {
+	width: 50px;
 	position: relative;
 	height: 50px;
 	float: left;
@@ -164,28 +202,12 @@ nav li:hover {
 	margin-top: 10px;
 }
 .logo h1 {
+	margin: 0;
 	font-size: 1.6em;
 	text-align: center;
 }
 .logo h1:hover{
 	color: rgb(0, 152, 212);
-}
-header>h1 {
-	font-weight: bold;
-	font-size: 2.2em;
-	margin: 60px 10% 50px 10%;
-}
-.header-img-div {
-	width: 100%;
-	height: 400px;
-	overflow: hidden;
-}
-header img {
-	width: 100%;
-	height: auto;
-	position: relative;
-	top: -70px;
-	animation: fadeIn 4s;
 }
 .hidden-menu {
 	display: flex;
@@ -218,12 +240,19 @@ header img {
 	opacity: 0.95;
 	z-index: 2;
 }
+.hidden-menu li:nth-child(4){
+	display: none;
+}
 @keyframes fadeIn {
 	from { opacity: 0; }
 	to { opacity: 1; }
 }
 
-/*  hamberger icon  */
+/*
+
+hamberger icon
+
+*/
 
 #nav-icon {
 	float: right;
@@ -297,7 +326,11 @@ header img {
   transform: rotate(-135deg);
 }
 
-/*  front page main content */
+/*
+
+front page main content
+
+*/
 
 main {
 	margin-top: 40px;
@@ -378,7 +411,12 @@ main {
 	padding: 20px;
 }
 
-/*  footer  */
+/*
+
+footer
+
+*/
+
 footer {
 	border-top: 1px solid rgb(240, 238, 238);
 }
@@ -410,8 +448,6 @@ footer p {
 .contact a:hover i{
 	transform: translateX(7px);
 }
-
-/*  media query  */
 
 @media screen and (max-width: 1180px){
 	.featured-projects {
@@ -518,4 +554,250 @@ footer p {
 		font-size: 1.8em;
 		margin-bottom: 100px;
 	}
+}
+
+/*
+
+portfolio page
+
+*/
+
+.works {
+	justify-content: space-around;
+}
+.project-block {
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-right: 2%
+}
+.project-img-container {
+	width: 100%;
+	height: 190px;
+	margin: 0 auto 30px auto;
+	border: 1px solid rgb(154, 156, 158);
+	position: relative;
+	overflow: hidden;
+}
+.project-block-img {
+	width: 100%;
+	height: 100%;
+}
+.middle {
+	width: 100%;
+	height: 100%;
+	background-color: gray;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	height: 190px;
+	transition: opacity .4s;
+}
+.middle a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.more-detail {
+	color: white;
+	border: 2px solid rgb(0, 152, 212);
+	border-radius: 6px;
+	padding: 10px 15px;
+	display: block;
+	padding: 2% auto;
+	text-align: center;
+	width: 50%;
+	position: absolute;
+	bottom: -50%;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	visibility: hidden;	
+	transition: 0.5s ease-out;
+}
+.more-detail i {
+	transition: transform 0.5s; 
+}
+.more-detail:hover i {
+	transform: translateX(7px);
+}
+.project-img-container:hover .middle {
+	opacity: 0.8;
+}
+.project-img-container:hover .more-detail {
+	bottom: 40%;
+	visibility: visible;
+}
+.project-block p, .project-block h2 {
+	text-align: center;
+	width: 90%;
+}
+
+@media screen and (max-width: 1040px){
+	.project-block {
+		width: 48%;
+	}
+	.project-img-container {
+		width: 240px;
+	}
+}
+@media screen and (max-width: 735px){
+	.project-block {
+		width: 90%;
+	}
+	.project-img-container {
+		width: 240px;
+	}
+}
+
+/*
+
+about page
+
+*/
+
+.about {
+	align-items: flex-start;
+	justify-content: space-between;
+}
+.about img {
+	width: 40%;
+	min-width: 250px;
+	height: auto;
+	margin: 0 5% 5% 0;
+}
+#about-text {
+	width: 55%;
+}
+#about-text p {
+	font-size: 1em;
+}
+#about-text .link-button {
+	width: 300px;
+	padding: 18px 14px;
+}
+.education-img {
+	width: 20%;
+	height: auto;
+}
+
+@media screen and (max-width: 881px){
+	.about img {
+		width: 100%;
+	}
+	#about-text {
+		width: 100%;
+	}
+}
+@media screen and (max-width: 415px){
+	#about-text .link-button {
+		width: 150px;
+	}
+}
+
+/*
+
+gallery page
+
+*/
+
+.gallery {
+	justify-content: space-around;
+}
+.gallery-column {
+	width: 49%;
+}
+.gallery img {
+	margin-bottom: 10px;
+	transition: transform 0.4s;
+}
+.gallery img:hover {
+	transform: scale(1.1);
+}
+
+@media screen and (max-width: 815px) {
+	.gallery-column {
+		width: 100%;
+	}
+	.gallery-column {
+
+	}
+}
+
+/*
+
+sidebar
+
+*/
+
+aside {
+	padding-top: 50px;
+	width: 30%;
+}
+.widget {
+	margin: 30px 0;
+}
+.widget h2 {
+	font-size: 1.2em;
+	margin: 10px 0;
+}
+.widget a{
+	color: rgb(0, 152, 212);
+}
+
+/*
+
+blog
+
+*/
+
+.blog-main-content {
+	display: flex;
+}
+.blog-posts {
+	width: 60%;
+}
+.post-text {
+	width: 100%;
+}
+.post-text a {
+	color: rgb(0, 152, 212);
+}
+.post-text h2 {
+	font-size: 2em;
+}
+.img-container {
+	width: 90%;
+	margin-bottom: 30px;
+}
+.post-meta {
+	margin: 20px 0 40px;
+	display: flex;
+	align-items: center;
+	list-style: none;
+	width: 100%;
+}
+.post-meta li {
+	margin-right: 5px;
+}
+.post-meta a {
+	color: rgb(0, 152, 212);
+}
+article.post {
+	margin-bottom: 20px;
+	border-bottom: 1px solid rgb(240, 238, 238);
+}
+article.post:last-child {
+	border-bottom: 0;
+}
+.previous-next {
+	display: flex;
+	justify-content: space-between;
+	margin: 20px auto;
+}
+.previous-next i {
+	margin: 0 10px;
 }
