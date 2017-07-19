@@ -30,6 +30,7 @@
               <?php next_post_link('%link', 'Next<i class="fa fa-arrow-circle-right" aria-hidden="true"></i>'); ?>
             </div>
          </article>
+          <?php comments_template(); ?>
         <?php endwhile; else : ?>
         <h1>Oops</h1>
         <h2>sorry we can't find any post</h2>

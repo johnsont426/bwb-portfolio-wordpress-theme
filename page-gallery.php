@@ -15,7 +15,7 @@
 			</div>
 			<div class="gallery-column">
 				<?php
-					for($counter = 12; $counter < 28; $counter++){
+					for($counter = 14; $counter < 28; $counter++){
 						echo '<img src="' . $gallery[$counter] . '">';
 					}
 				?>
